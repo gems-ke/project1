@@ -112,7 +112,7 @@ public class PanelManager extends JPanel{
 			
 			g.setColor(Color.BLACK);
 			if(di < currentVec.length - 1){
-				g.drawLine( di * ( 50 / (int) Main.dataProvider.getMassScale()) + 50, (500 - (currentVec[di].getValue()*50 / Main.dataProvider.getMassScale())), (di + 1) * ( 50 / (int) Main.dataProvider.getMassScale()) + 50, (500 - (currentVec[di + 1].getValue()*50 / Main.dataProvider.getScale())));
+				g.drawLine( di * ( 50 / (int) Main.dataProvider.getMassScale()) + 50, (500 - (currentVec[di].getValue()*50 / Main.dataProvider.getScale())), (di + 1) * ( 50 / (int) Main.dataProvider.getMassScale()) + 50, (500 - (currentVec[di + 1].getValue()*50 / Main.dataProvider.getScale())));
 			}
 			
 			g.setColor(Color.RED);

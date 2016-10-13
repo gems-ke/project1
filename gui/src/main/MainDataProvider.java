@@ -143,7 +143,7 @@ public class MainDataProvider {
 	
 	private String unit = "g/l";
 	private int scale = 50;
-	private String operationParameter = new String();
+	private String operationParameter = new String("brom");
 	private int massScale = 1;
 
 	public String getUnit() {
