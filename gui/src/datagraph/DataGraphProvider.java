@@ -31,7 +31,7 @@ public class DataGraphProvider {
 	JLabel separator;
 	
 	//Text für den "=>" Pfeil
-	JLabel[] path = {new JLabel(" => "), new JLabel(" => ")};
+	JLabel[] path = {new JLabel("=>"), new JLabel("=>")};
 	
 	//Text für "Messbezeichnung"
 	JLabel messBezeichnungText;

@@ -20,31 +20,31 @@ import java.awt.Color;
 
 public class Main extends JFrame {
 
-	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JLabel lblBis;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JLabel lblMessbezeichnung;
-	private JTextField textField_7;
-	private JLabel label;
-	private JTextField textField_8;
-	private JLabel lblSollbereich;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JLabel label_1;
-	private JTabbedPane tabbedPane;
-	private JTabbedPane tabbedPane_1;
-	private JTabbedPane tabbedPane_2;
-	private JLabel label_2;
-	private JMenu mnEinstellungen;
-	private JMenu mnHilfe;
-	private JPanel panel_2;
-	private JPanel panel_3;
+	private static JPanel contentPane;
+	private static JTextField textField;
+	private static JTextField textField_1;
+	private static JTextField textField_2;
+	private static JTextField textField_3;
+	private static JLabel lblBis;
+	private static JTextField textField_4;
+	private static JTextField textField_5;
+	private static JTextField textField_6;
+	private static JLabel lblMessbezeichnung;
+	private static JTextField textField_7;
+	private static JLabel label;
+	private static JTextField textField_8;
+	private static JLabel lblSollbereich;
+	private static JTextField textField_9;
+	private static JTextField textField_10;
+	private static JLabel label_1;
+	private static JTabbedPane tabbedPane;
+	private static JTabbedPane tabbedPane_1;
+	private static JTabbedPane tabbedPane_2;
+	private static JLabel label_2;
+	private static JMenu mnEinstellungen;
+	private static JMenu mnHilfe;
+	private static JPanel panel_2;
+	private static JPanel panel_3;
 	
 	/**
 	 * Create static object for only 1 usage of data stuff
@@ -79,8 +79,7 @@ public class Main extends JFrame {
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
-		//Menu Bar Content
-		
+		//Menu Bar Content	
 		dataProvider.setMenuBar(new JMenuBar());	
 		setJMenuBar(dataProvider.getMenuBar());
 		
@@ -98,6 +97,7 @@ public class Main extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		//Tabbed Panes Content	
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(0, 0, 972, 540);
 		contentPane.add(tabbedPane);
@@ -106,8 +106,12 @@ public class Main extends JFrame {
 		tabbedPane.addTab("DataGraph", null, panel, null);
 		panel.setLayout(null);
 		
+		panel_3 = new JPanel();
+		tabbedPane.addTab("New tab", null, panel_3, null);
+		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Einstellungen", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), 
+				"Einstellungen", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel_1.setBounds(10, 11, 292, 243);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
@@ -207,8 +211,5 @@ public class Main extends JFrame {
 		panel_2.setBorder(new TitledBorder(null, "Graph", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_2.setBounds(312, 11, 655, 501);
 		panel.add(panel_2);
-		
-		panel_3 = new JPanel();
-		tabbedPane.addTab("New tab", null, panel_3, null);
 	}
 }
