@@ -17,6 +17,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.UIManager;
 import java.awt.Color;
+import javax.swing.JButton;
 
 public class Main extends JFrame {
 	
@@ -77,7 +78,7 @@ public class Main extends JFrame {
 	public Main() {		
 		//Setup First Content
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 988, 600);
+		setBounds(100, 100, 1350, 620);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
@@ -101,7 +102,7 @@ public class Main extends JFrame {
 		
 		//Tabbed Panes Content	
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, 0, 972, 540);
+		tabbedPane.setBounds(0, 0, 1344, 591);
 		contentPane.add(tabbedPane);
 		
 		JPanel panel = new JPanel();
@@ -114,7 +115,7 @@ public class Main extends JFrame {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), 
 				"Einstellungen", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_1.setBounds(10, 11, 292, 243);
+		panel_1.setBounds(10, 11, 292, 284);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -209,9 +210,19 @@ public class Main extends JFrame {
 		label_1.setBounds(137, 215, 30, 14);
 		panel_1.add(label_1);
 		
+		JButton btnNewButton = new JButton("Aktualisieren");
+		btnNewButton.setBounds(81, 250, 112, 23);
+		panel_1.add(btnNewButton);
+		
 		panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "Graph", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_2.setBounds(312, 11, 655, 501);
+		panel_2.setBounds(312, 11, 1020, 525);
 		panel.add(panel_2);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(new TitledBorder(null, "Messinformation", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_4.setBounds(10, 306, 292, 230);
+		panel.add(panel_4);
+		panel_4.setLayout(null);
 	}
 }
