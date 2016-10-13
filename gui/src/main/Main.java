@@ -19,6 +19,8 @@ import javax.swing.UIManager;
 import java.awt.Color;
 
 public class Main extends JFrame {
+	
+	private boolean swagUnloaded = true;
 
 	private static JPanel contentPane;
 	private static JTextField textField;
