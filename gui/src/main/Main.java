@@ -49,7 +49,6 @@ public class Main extends JFrame {
 	private static JMenu mnHilfe;
 	private static JPanel panel_2;
 	private static JPanel panel_3;
-	private static PanelManager pm = new PanelManager();
 	
 	/**
 	 * Create static object for only 1 usage of data stuff
@@ -219,8 +218,12 @@ public class Main extends JFrame {
 		panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "Graph", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_2.setBounds(312, 11, 1020, 535);
-		panel_2.add(pm);
 		panel.add(panel_2);
+		panel_2.setLayout(null);
+		
+		PanelManager panelManager = new PanelManager();
+		panelManager.setBounds(10, 11, 1000, 513);
+		panel_2.add(panelManager);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new TitledBorder(null, "Messinformation", TitledBorder.LEADING, TitledBorder.TOP, null, null));
