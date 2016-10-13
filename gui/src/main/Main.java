@@ -79,7 +79,7 @@ public class Main extends JFrame {
 	public Main() {		
 		//Setup First Content
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1350, 633);
+		setBounds(100, 100, 1350, 661);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
@@ -103,7 +103,7 @@ public class Main extends JFrame {
 		
 		//Tabbed Panes Content	
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, 0, 1344, 604);
+		tabbedPane.setBounds(0, 0, 1344, 632);
 		contentPane.add(tabbedPane);
 		
 		JPanel panel = new JPanel();
@@ -217,17 +217,17 @@ public class Main extends JFrame {
 		
 		panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "Graph", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_2.setBounds(312, 11, 1020, 535);
+		panel_2.setBounds(312, 11, 1020, 570);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
 		
 		PanelManager panelManager = new PanelManager();
-		panelManager.setBounds(10, 11, 1000, 513);
+		panelManager.setBounds(10, 21, 1000, 549);
 		panel_2.add(panelManager);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new TitledBorder(null, "Messinformation", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_4.setBounds(10, 306, 292, 240);
+		panel_4.setBounds(10, 306, 292, 275);
 		panel.add(panel_4);
 		panel_4.setLayout(null);
 	}
