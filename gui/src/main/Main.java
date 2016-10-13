@@ -11,6 +11,7 @@ import javax.swing.JComboBox;
 import javax.swing.border.TitledBorder;
 
 import datagraph.DataGraphProvider;
+import graphPanel.PanelManager;
 import main.Main;
 
 import javax.swing.JMenuBar;
@@ -48,11 +49,12 @@ public class Main extends JFrame {
 	private static JMenu mnHilfe;
 	private static JPanel panel_2;
 	private static JPanel panel_3;
+	private static PanelManager pm = new PanelManager();
 	
 	/**
 	 * Create static object for only 1 usage of data stuff
 	 */
-	public static GuiDataProvider dataProvider = new GuiDataProvider();
+	public static MainDataProvider dataProvider = new MainDataProvider();
 	public static DataGraphProvider dataGraphProvider = new DataGraphProvider();
 
 
@@ -217,6 +219,7 @@ public class Main extends JFrame {
 		panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "Graph", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_2.setBounds(312, 11, 1020, 535);
+		panel_2.add(pm);
 		panel.add(panel_2);
 		
 		JPanel panel_4 = new JPanel();

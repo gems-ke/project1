@@ -13,7 +13,7 @@ import javax.swing.JTabbedPane;
  * All variables must be declared private.
  *
  */
-public class GuiDataProvider {	
+public class MainDataProvider {	
 	// ---------- Variable Declaration/Definition ---------- //
 	
 	//Definition of the view container
@@ -134,4 +134,50 @@ public class GuiDataProvider {
 	protected void setTabbedPane(JTabbedPane pane){
 		this.tabbedPane = pane;
 	}
+	
+	// ---------- Graph Panel Information Variables ---------- //
+	
+	/**
+	 * All nessecary global Variables for Graphhandling
+	 */
+	
+	private String unit = "g/l";
+	private int scale = 50;
+	private String operationParameter = new String();
+	private int massScale = 1;
+
+	public String getUnit() {
+		return unit;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
+	public int getScale() {
+		return scale;
+	}
+
+	public void setScale(int scale) {
+		this.scale = scale;
+	}
+
+	public String getOperationParameter() {
+		return operationParameter;
+	}
+
+	public void setOperationParameter(String operationParameter) {
+		this.operationParameter = operationParameter;
+	}
+
+	public int getMassScale() {
+		return massScale;
+	}
+
+	public void setMassScale(int massScale) {
+		this.massScale = massScale;
+	}
+	
+	
+	
 }
