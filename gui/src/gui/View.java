@@ -13,7 +13,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 import datagraph.DataGraphProvider;
-import datagraph.DataGraphView; 
+import datagraph.DataGraphView;
+import main.Main; 
 
 /**
  * Handles GUI and View Stuff of the Project, without variable

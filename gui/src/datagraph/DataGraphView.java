@@ -5,7 +5,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import gui.Main;
+import main.Main;
 
 public class DataGraphView {
 	

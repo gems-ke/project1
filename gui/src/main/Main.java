@@ -1,6 +1,8 @@
-package gui;
+package main;
 
 import datagraph.DataGraphProvider;
+import gui.GuiDataProvider;
+import gui.View;
 
 /**
  * Callback Main class
