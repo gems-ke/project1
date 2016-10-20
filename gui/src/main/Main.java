@@ -40,12 +40,12 @@ public class Main extends JFrame {
 	private static JTextField textField_5;
 	private static JTextField textField_6;
 	private static JLabel lblMessbezeichnung;
-	private static JTextField textField_7;
+	static JTextField textField_7;
 	private static JLabel label;
-	private static JTextField textField_8;
+	static JTextField textField_8;
 	private static JLabel lblSollbereich;
-	private static JTextField textField_9;
-	private static JTextField textField_10;
+	static JTextField textField_9;
+	static JTextField textField_10;
 	private static JLabel label_1;
 	private static JTabbedPane tabbedPane;
 	private static JTabbedPane tabbedPane_1;

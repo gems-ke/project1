@@ -20,11 +20,11 @@ class buttonClick implements ActionListener {
             	Main.dataProvider.setUnit("kg");
             }
             
-            Main.dataProvider.setEingriffS(Float.parseFloat(Main.dataGraphProvider.getEingriffsbereichFeld()[0].getText().toString()));
-            Main.dataProvider.setEingriffE(Float.parseFloat(Main.dataGraphProvider.getEingriffsbereichFeld()[1].getText().toString()));
+            Main.dataProvider.setEingriffS(Float.parseFloat(Main.textField_8.getText().toString()));
+            Main.dataProvider.setEingriffE(Float.parseFloat(Main.textField_7.getText().toString()));
             
-            Main.dataProvider.setSollS(Float.parseFloat(Main.dataGraphProvider.getSollbereichFeld()[0].getText().toString()));
-            Main.dataProvider.setSollE(Float.parseFloat(Main.dataGraphProvider.getSollbereichFeld()[1].getText().toString()));
+            Main.dataProvider.setSollS(Float.parseFloat(Main.textField_9.getText().toString()));
+            Main.dataProvider.setSollE(Float.parseFloat(Main.textField_10.getText().toString()));
             
             Main.panel_2.repaint();
     } 
