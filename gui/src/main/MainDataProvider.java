@@ -95,15 +95,15 @@ public class MainDataProvider {
 	 * Sets a new panel container for the java window view
 	 * @param panel the new container panel object
 	 */
-	protected void setPanel(Panel panel){
+	public void setPanel(Panel panel){
 		this.mainPanel = panel;
 	}
 	
-	protected void setTabPanel1(Panel panel){
+	public void setTabPanel1(Panel panel){
 		this.tabPanel1 = panel;
 	}
 	
-	protected void setTabPanel2(Panel panel){
+	public void setTabPanel2(Panel panel){
 		this.tabPanel2 = panel;
 	}
 	
@@ -111,27 +111,27 @@ public class MainDataProvider {
 	 * Sets a new JFrame Object
 	 * @param mainPanel the new JFrame object
 	 */
-	protected void setFrame(JFrame frame){
+	public void setFrame(JFrame frame){
 		this.frame = frame;
 	}
 	
-	protected void setMenuItem(JMenuItem menu){
+	public void setMenuItem(JMenuItem menu){
 		this.menuItem = menu;
 	}
 	
-	protected void setMenu(JMenu menu){
+	public void setMenu(JMenu menu){
 		this.menu = menu;
 	}
 	
-	protected void setSubMenu(JMenu menu){
+	public void setSubMenu(JMenu menu){
 		this.menu = menu;
 	}
 	
-	protected void setMenuBar(JMenuBar menu){
+	public void setMenuBar(JMenuBar menu){
 		this.menuBar = menu;
 	}
 	
-	protected void setTabbedPane(JTabbedPane pane){
+	public void setTabbedPane(JTabbedPane pane){
 		this.tabbedPane = pane;
 	}
 	
@@ -142,9 +142,13 @@ public class MainDataProvider {
 	 */
 	
 	private String unit = "g/l";
-	private int scale = 50;
+	private int scale = 100;
 	private String operationParameter = new String("brom");
 	private int massScale = 1;
+	private float sollS = 80f;
+	private float sollE = 415f;
+	private float eingriffS = 140f;
+	private float eingriffE = 365f;
 
 	public String getUnit() {
 		return unit;
@@ -176,6 +180,38 @@ public class MainDataProvider {
 
 	public void setMassScale(int massScale) {
 		this.massScale = massScale;
+	}
+
+	public float getSollS() {
+		return sollS;
+	}
+
+	public void setSollS(float sollS) {
+		this.sollS = sollS;
+	}
+
+	public float getSollE() {
+		return sollE;
+	}
+
+	public void setSollE(float sollE) {
+		this.sollE = sollE;
+	}
+
+	public float getEingriffS() {
+		return eingriffS;
+	}
+
+	public void setEingriffS(float eingriffS) {
+		this.eingriffS = eingriffS;
+	}
+
+	public float getEingriffE() {
+		return eingriffE;
+	}
+
+	public void setEingriffE(float eingriffE) {
+		this.eingriffE = eingriffE;
 	}
 	
 	

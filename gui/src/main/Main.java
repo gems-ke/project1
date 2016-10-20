@@ -1,6 +1,13 @@
 package main;
 
 import java.awt.EventQueue;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -9,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.border.TitledBorder;
+import javax.swing.filechooser.FileSystemView;
 
 import datagraph.DataGraphProvider;
 import graphPanel.PanelManager;
@@ -21,8 +29,6 @@ import java.awt.Color;
 import javax.swing.JButton;
 
 public class Main extends JFrame {
-	
-	private boolean swagUnloaded = true;
 
 	private static JPanel contentPane;
 	private static JTextField textField;
@@ -47,7 +53,7 @@ public class Main extends JFrame {
 	private static JLabel label_2;
 	private static JMenu mnEinstellungen;
 	private static JMenu mnHilfe;
-	private static JPanel panel_2;
+	static JPanel panel_2;
 	private static JPanel panel_3;
 	
 	/**
@@ -56,11 +62,41 @@ public class Main extends JFrame {
 	public static MainDataProvider dataProvider = new MainDataProvider();
 	public static DataGraphProvider dataGraphProvider = new DataGraphProvider();
 
-
+	static JComboBox comboBox;
+	
 	/**
 	 * Launch the application.
 	 */
+	
+	private static String strDirectory = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "/galvaLog.txt";
+	private static String defaultSave = "log Start" + System.getProperty("line.separator") + "name" + System.getProperty("line.separator") + "chlor" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "kg" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "120" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "10-10-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "chlor" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "kg" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "180" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "13-10-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "chlor" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "kg" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "90" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "16-10-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "chlor" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "kg" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "160" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "25-10-2016" + System.getProperty("line.separator") +
+																							"name" + System.getProperty("line.separator") + "chlor" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "kg" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "150" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "31-10-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "chlor" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "kg" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "135" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "5-11-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "brom" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "ml" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "450" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "17-10-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "brom" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "ml" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "500" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "18-10-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "brom" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "ml" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "380" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "20-10-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "brom" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "ml" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "510" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "25-10-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "brom" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "ml" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "320" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "5-11-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "brom" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "ml" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "570" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "16-11-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "brom" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "ml" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "440" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "18-11-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "brom" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "ml" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "330" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "19-11-2016" + System.getProperty("line.separator") + 
+																							"name" + System.getProperty("line.separator") + "brom" + System.getProperty("line.separator") + "unit" + System.getProperty("line.separator") + "ml" + System.getProperty("line.separator") + "value" + System.getProperty("line.separator") + "480" + System.getProperty("line.separator") + "date" + System.getProperty("line.separator") + "25-11-2016" + System.getProperty("line.separator") + 
+																							"";
+	
 	public static void main(String[] args) {
+		
+		File Pfile = new File(strDirectory);
+		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+	              new FileOutputStream(Pfile), "utf-8"))) {
+	   writer.write(defaultSave);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -171,7 +207,7 @@ public class Main extends JFrame {
 		lblMessbezeichnung.setBounds(24, 113, 112, 20);
 		panel_1.add(lblMessbezeichnung);
 		
-		JComboBox comboBox = new JComboBox();
+		comboBox = new JComboBox(dataGraphProvider.getListEntries());
 		comboBox.setBounds(153, 113, 124, 20);
 		panel_1.add(comboBox);
 		
@@ -213,6 +249,7 @@ public class Main extends JFrame {
 		
 		JButton btnNewButton = new JButton("Aktualisieren");
 		btnNewButton.setBounds(81, 250, 112, 23);
+		btnNewButton.addActionListener(new buttonClick()); 
 		panel_1.add(btnNewButton);
 		
 		panel_2 = new JPanel();
@@ -231,4 +268,5 @@ public class Main extends JFrame {
 		panel.add(panel_4);
 		panel_4.setLayout(null);
 	}
+	
 }

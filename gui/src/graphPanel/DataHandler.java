@@ -8,7 +8,7 @@ import javax.swing.filechooser.FileSystemView;
 
 public class DataHandler {
 	
-	static String strDirectoy = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "/GalvaLog/galvaLog.txt";
+	static String strDirectoy = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "/galvaLog.txt";
 	
 	/*public static void instanciate(){
 		new File(strDirectoy).mkdir();
@@ -156,6 +156,68 @@ public class DataHandler {
 				vArrayPass[i3] = vecFlex;
 			
 		}
+		
+	}
+	
+	public Vector4d[] sortDates (Vector4d[] dateStartArray){
+		
+		boolean isSorted = false;
+		
+		if(dateStartArray.length > 1){
+			Datum currentDate = dateStartArray[0].getDate();
+		
+			Datum compareDate = dateStartArray[1].getDate();
+			while(!isSorted){
+				for (int i = 0; i < dateStartArray.length-1; i++){
+			
+					//System.out.println(currentDate.getTimeDelta(dateStartArray[i + 1].getDate()));
+				
+					currentDate = dateStartArray[i].getDate();
+				
+					compareDate = dateStartArray[i + 1].getDate();
+			
+					if (currentDate.getTimeDelta(compareDate) > 0)
+					{
+						dateStartArray[i].setDate(compareDate);
+						dateStartArray[i + 1].setDate(currentDate);
+					}
+					if (currentDate.getTimeDelta(compareDate) < 0)
+					{
+						dateStartArray[i + 1].setDate(compareDate);
+						dateStartArray[i].setDate(currentDate);
+					}
+			
+				}
+				
+				isSorted = true;
+				
+				for (int i = 0; i < dateStartArray.length-1; i++){
+					
+					if (isSorted){
+						currentDate = dateStartArray[i].getDate();
+						
+						compareDate = dateStartArray[i + 1].getDate();
+				
+						if (currentDate.getTimeDelta(compareDate) > 0)
+						{
+							isSorted = false;
+						}
+					}
+					
+				}
+					
+			}
+		}
+		
+		//flip array
+		
+		for(int i = 0; i < dateStartArray.length / 2; i++)
+		{
+		    Vector4d temp = dateStartArray[i];
+		    dateStartArray[i] = dateStartArray[dateStartArray.length - i - 1];
+		    dateStartArray[dateStartArray.length - i - 1] = temp;
+		}
+		return dateStartArray;
 		
 	}
 	

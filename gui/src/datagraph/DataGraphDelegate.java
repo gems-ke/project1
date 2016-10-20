@@ -9,15 +9,7 @@ public class DataGraphDelegate {
 	//Dropdown Einträge können so abgefangen werden: String value = comboBox.getSelectedItem().toString();
 
 	//Beispiel für Buttons:
-	/*
-	 * button.addActionListener(new buttonClick()); 
-	 * 
-	 * class buttonClick implements ActionListener { 
-        public void actionPerformed(ActionEvent e) { 
-            if(e.getSource() == button){ 
-                System.out.println("Button geklickt!"); 
-            } 
-        } 
-    } 
-	 */
+	
+	 
+	 
 }
